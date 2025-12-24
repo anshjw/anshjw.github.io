@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <!-- SEO -->
   <title>Ansh Jaiswal | Data Analyst Portfolio</title>
-  <meta name="description" content="Ansh Jaiswal – Undergraduate Data Analyst skilled in Python, SQL, data analysis, and visualization. Explore projects, dashboards, and resume." />
-  <meta name="keywords" content="Data Analyst, Python, SQL, Portfolio, Ansh Jaiswal, GitHub Pages" />
-  <meta name="author" content="Ansh Jaiswal" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ansh Jaiswal | Data Analyst Portfolio" />
-  <meta property="og:description" content="Projects, dashboards, and resume of Ansh Jaiswal – Data Analyst." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://anshjw.github.io/" />
+  <meta name="description" content="Ansh Jaiswal – Undergraduate Data Analyst skilled in Python, SQL, and data analysis. View projects, dashboards, and resume."/>
+  <meta name="keywords" content="Data Analyst, Python, SQL, Portfolio, Ansh Jaiswal"/>
+  <meta name="author" content="Ansh Jaiswal"/>
 
   <style>
     :root {
@@ -25,58 +19,84 @@
       --bg:#0f172a; --text:#e5e7eb; --muted:#9ca3af;
       --card:#1e293b; --accent:#38bdf8; --border:#334155;
     }
+
     *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
     body{background:var(--bg);color:var(--text);scroll-behavior:smooth;}
 
+    /* NAVBAR */
     nav{
-      position:sticky;top:20px;margin:0 auto;width:85%;
-      background:var(--card);border:1px solid var(--border);
-      border-radius:22px;padding:16px 36px;
-      display:flex;justify-content:space-between;align-items:center;z-index:100;
+      position:sticky;top:16px;margin:0 auto;
+      width:75%;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:14px 30px;
+      display:flex;justify-content:space-between;align-items:center;
+      z-index:100;
     }
-    nav a{margin:0 16px;text-decoration:none;color:var(--text);font-weight:500;}
+    nav a{margin:0 14px;text-decoration:none;color:var(--text);font-weight:500;}
     nav a:hover{color:var(--accent);}
     .toggle{cursor:pointer;font-size:18px;}
 
-    section{padding:90px 10%;max-width:1100px;margin:auto;}
-    h1{font-size:2.4rem;margin-bottom:12px;}
-    h2{font-size:1.9rem;margin-bottom:22px;}
-    p{color:var(--muted);max-width:720px;}
+    /* SECTIONS */
+    section{padding:60px 10%;max-width:1100px;margin:auto;}
+    h1{font-size:2.3rem;margin-bottom:10px;}
+    h2{font-size:1.7rem;margin-bottom:18px;}
+    p{color:var(--muted);max-width:750px;}
 
     .card{
-      background:var(--card);padding:26px;border-radius:16px;
-      border:1px solid var(--border);margin-bottom:28px;
-    }
-
-    /* Skills */
-    .skills{display:flex;flex-wrap:wrap;gap:12px;}
-    .skill{
-      padding:10px 16px;border-radius:10px;
-      background:var(--bg);border:1px solid var(--border);
-      font-size:14px;transition:.2s;
-    }
-    .skill:hover{background:var(--accent);color:#fff;transform:translateY(-2px);}
-
-    /* Projects */
-    .project img{
-      width:100%;border-radius:12px;margin-bottom:16px;
+      background:var(--card);
+      padding:22px;
+      border-radius:14px;
       border:1px solid var(--border);
+    }
+
+    /* ABOUT LIST */
+    ul{margin-top:10px;padding-left:18px;}
+    li{margin-bottom:8px;color:var(--muted);}
+
+    /* SKILLS */
+    .skills{display:flex;flex-wrap:wrap;gap:10px;}
+    .skill{
+      padding:8px 14px;border-radius:10px;
+      background:var(--bg);
+      border:1px solid var(--border);
+      font-size:14px;
+      transition:.2s;
+    }
+    .skill:hover{background:var(--accent);color:#fff;}
+
+    /* PROJECTS GRID */
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+    }
+    .project img{
+      width:100%;
+      border-radius:12px;
+      border:1px solid var(--border);
+      margin-bottom:12px;
     }
     .project-footer{
       display:flex;justify-content:space-between;align-items:center;
-    }
-    .btn{
-      padding:10px 16px;border-radius:10px;
-      background:var(--accent);color:#fff;text-decoration:none;font-size:14px;
+      margin-top:10px;
     }
 
-    /* Connect */
+    .btn{
+      padding:8px 14px;
+      border-radius:8px;
+      background:var(--accent);
+      color:#fff;text-decoration:none;font-size:14px;
+    }
+
+    /* CONNECT */
     .connect{text-align:center;}
-    .connect a{margin:0 12px;display:inline-block;}
-    .connect img{width:38px;height:38px;transition:.2s;}
+    .connect a{margin:0 10px;}
+    .connect img{width:36px;height:36px;transition:.2s;}
     .connect img:hover{transform:scale(1.1);}
 
-    footer{text-align:center;padding:30px;color:var(--muted);font-size:14px;}
+    footer{text-align:center;padding:26px;color:var(--muted);font-size:14px;}
   </style>
 </head>
 
@@ -88,7 +108,6 @@
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#dashboards">Dashboards</a>
     <a href="#connect">Contact</a>
     <span class="toggle" onclick="toggleTheme()">🌗</span>
   </div>
@@ -96,13 +115,18 @@
 
 <section id="about">
   <h1>Hello, I’m Ansh 👋</h1>
-  <p>
-    Undergraduate Data Analyst with experience in Python, SQL, and data analysis.
-    I enjoy working on real projects, building dashboards, and applying data-driven
-    thinking to solve practical problems.
-  </p>
-  <br/>
-  <a class="btn" href="resume.pdf" download>Download Resume</a>
+  <div class="card">
+    <ul>
+      <li>Undergraduate Data Analyst with a strong interest in data-driven problem solving.</li>
+      <li>Hands-on experience with Python, SQL, and structured data analysis.</li>
+      <li>Built academic and real-world projects focused on functionality and clarity.</li>
+      <li>Comfortable working with databases and backend logic.</li>
+      <li>Interested in dashboards, analytics, and business insights.</li>
+      <li>Actively improving skills through projects and continuous learning.</li>
+    </ul>
+    <br/>
+    <a class="btn" href="resume.pdf" download>Download Resume</a>
+  </div>
 </section>
 
 <section id="skills">
@@ -121,29 +145,28 @@
 
 <section id="projects">
   <h2>Projects</h2>
+  <div class="projects-grid">
 
-  <div class="card project">
-    <img src="gym.png" alt="Gym Management Project"/>
-    <div class="project-footer">
+    <div class="card project">
+      <img src="gym.png" alt="Gym Management System"/>
       <strong>Gym Management System</strong>
-      <a class="btn" href="https://github.com/anshjw/gym" target="_blank">View Project</a>
+      <p>Admin-focused system to manage members, plans, billing, and gym operations.</p>
+      <div class="project-footer">
+        <span></span>
+        <a class="btn" href="https://github.com/anshjw/gym" target="_blank">View Project</a>
+      </div>
     </div>
-  </div>
 
-  <div class="card project">
-    <img src="microproject.png" alt="Microproject"/>
-    <div class="project-footer">
+    <div class="card project">
+      <img src="microproject.png" alt="Microproject"/>
       <strong>Academic Microproject</strong>
-      <a class="btn" href="https://github.com/anshjw/Microproject" target="_blank">View Project</a>
+      <p>Structured academic project demonstrating problem-solving and implementation skills.</p>
+      <div class="project-footer">
+        <span></span>
+        <a class="btn" href="https://github.com/anshjw/Microproject" target="_blank">View Project</a>
+      </div>
     </div>
-  </div>
-</section>
 
-<section id="dashboards">
-  <h2>Streamlit Dashboards</h2>
-  <div class="card">
-    <p>Interactive dashboards built using Streamlit for data exploration and visualization.</p>
-    <p><em>(Links will be added soon)</em></p>
   </div>
 </section>
 
