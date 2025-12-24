@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ansh Jaiswal | Data Analyst</title>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #555555;
+      --card: #f5f5f5;
+      --accent: #2563eb;
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #1e293b;
+      --accent: #38bdf8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--card);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 10%;
+      z-index: 100;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .toggle {
+      cursor: pointer;
+      border: 1px solid var(--muted);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 10%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* SKILLS */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: var(--bg);
+      border: 1px solid var(--muted);
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    /* FOOTER LINKS */
+    .links a {
+      display: inline-block;
+      margin-right: 15px;
+      margin-top: 10px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body class="dark">
+
+  <!-- NAVBAR -->
+  <nav>
+    <strong>Ansh Jaiswal</strong>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#connect">Connect</a>
+      <span class="toggle" onclick="toggleTheme()">🌗</span>
+    </div>
+  </nav>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h1>Hello, I’m Ansh 👋</h1>
+    <p>
+      I’m an undergraduate <strong>Data Analyst</strong> focused on transforming data into insights
+      using Python, SQL, Excel, and visualization tools.
+      I enjoy working with real-world datasets, exploring patterns, and building analytical solutions.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+      <div class="skills">
+        <span class="skill">Python (Pandas, NumPy)</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Excel (Pivot Tables)</span>
+        <span class="skill">EDA</span>
+        <span class="skill">Data Cleaning</span>
+        <span class="skill">Statistics</span>
+        <span class="skill">Power BI (Basic)</span>
+        <span class="skill">Tableau (Basic)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <p>
+        I work on data analysis projects involving exploratory analysis,
+        SQL-based insights, and dashboard creation.
+      </p>
+      <p style="margin-top:10px;">
+        Projects are available on my GitHub and Kaggle profiles.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect">
+    <h2>Connect</h2>
+    <div class="card links">
+      <a href="https://github.com/anshjw" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/ansh-jaiswal-400b0a328" target="_blank">LinkedIn</a>
+      <a href="https://www.kaggle.com/anshjw" target="_blank">Kaggle</a>
+      <a href="mailto:anshjw1926@gmail.com">Email</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Ansh Jaiswal · Data Analytics Portfolio
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html>
