@@ -11,130 +11,864 @@
   <meta name="author" content="Ansh Jaiswal"/>
 
   <style>
-    :root {
-      --bg:#ffffff; --text:#0f172a; --muted:#475569;
-      --card:#f1f5f9; --accent:#2563eb; --border:#e2e8f0;
-    }
-    body.dark {
-      --bg:#0f172a; --text:#e5e7eb; --muted:#9ca3af;
-      --card:#1e293b; --accent:#38bdf8; --border:#334155;
-    }
+:root {
+  --bg: #f7f8fa;
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-solid: #ffffff;
+  --text: #111827;
+  --heading: #0b1220;
+  --muted: #64748b;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --accent-soft: rgba(37, 99, 235, 0.10);
+  --border: rgba(15, 23, 42, 0.09);
+  --shadow: 0 12px 35px rgba(15, 23, 42, 0.07);
+  --shadow-hover: 0 20px 45px rgba(15, 23, 42, 0.12);
+  --radius: 20px;
+  --radius-small: 12px;
+}
 
-    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
-    body{background:var(--bg);color:var(--text);scroll-behavior:smooth;}
+body.dark {
+  --bg: #070b12;
+  --surface: rgba(17, 24, 39, 0.82);
+  --surface-solid: #111827;
+  --text: #e5e7eb;
+  --heading: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #60a5fa;
+  --accent-dark: #3b82f6;
+  --accent-soft: rgba(96, 165, 250, 0.12);
+  --border: rgba(148, 163, 184, 0.14);
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
+  --shadow-hover: 0 25px 55px rgba(0, 0, 0, 0.42);
+}
 
-    /* NAVBAR */
-    nav{
-      position:sticky;top:20px;margin:0 auto;
-      width:52.5%;
-      height:50px;
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:20px;
-      padding:14px 30px;
-      display:flex;justify-content:space-between;align-items:center;
-      z-index:100;
-    }
-    nav a{margin:0 14px;text-decoration:none;color:var(--text);font-weight:500;}
-    nav a:hover{color:var(--accent);}
-    .toggle{cursor:pointer;font-size:18px;}
 
-    /* SECTIONS */
-    section{padding:60px 10%;max-width:1100px;margin:auto;}
-    h1{font-size:2.3rem;margin-bottom:10px;}
-    h2{font-size:1.7rem;margin-bottom:18px;}
-    p{color:var(--muted);max-width:750px;}
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
 
-    .card{
-      background:var(--card);
-      padding:22px;
-      border-radius:14px;
-      border:1px solid var(--border);
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* ABOUT LIST */
-    ul{margin-top:10px;padding-left:18px;}
-    li{margin-bottom:8px;color:var(--muted);}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
 
-    /* SKILLS */
-    .skills{display:flex;flex-wrap:wrap;gap:10px;}
-    .skill{
-      padding:8px 14px;border-radius:10px;
-      background:var(--bg);
-      border:1px solid var(--border);
-      font-size:14px;
-      transition:.2s;
-    }
-    .skill:hover{background:var(--accent);color:#fff;}
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(37, 99, 235, 0.07),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(59, 130, 246, 0.05),
+      transparent 28%
+    ),
+    var(--bg);
 
-    /* PROJECTS GRID */
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:20px;
-    }
-    .project img{
-      width:100%;
-      border-radius:12px;
-      border:1px solid var(--border);
-      margin-bottom:12px;
-    }
-    .project-footer{
-      display:flex;justify-content:space-between;align-items:center;
-      margin-top:10px;
-    }
+  color: var(--text);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 
-    .btn{
-      padding:8px 14px;
-      border-radius:8px;
-      background:var(--accent);
-      color:#fff;text-decoration:none;font-size:14px;
-    }
+  line-height: 1.6;
+  overflow-x: hidden;
 
-    .btn:hover {
-      background: var(--accent-hover, #0056b3); /* Replaces background color (adjust hex code as needed) */
-      opacity: 0.9; /* Slightly fades the button for a quick effect */
-      cursor: pointer; /* Ensures the pointer cursor appears */
-    }
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
 
-    /* CERTIFICATE GRID */
-    .certificate-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:20px;
-    }
-    .certificate img{
-      width:100%;
-      border-radius:12px;
-      border:1px solid var(--border);
-      margin-bottom:12px;
-    }
-    .certificate-footer{
-      display:flex;justify-content:space-between;align-items:center;
-      margin-top:10px;
-    }
 
-    .btn{
-      padding:8px 14px;
-      border-radius:8px;
-      background:var(--accent);
-      color:#fff;text-decoration:none;font-size:14px;
-    }
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
 
-    .btn:hover {
-      background: var(--accent-hover, #0056b3); /* Replaces background color (adjust hex code as needed) */
-      opacity: 0.9; /* Slightly fades the button for a quick effect */
-      cursor: pointer; /* Ensures the pointer cursor appears */
-    }
+h1,
+h2,
+strong {
+  color: var(--heading);
+}
 
-    
-    /* CONNECT */
-    .connect{text-align:center;}
-    .connect a{margin:0 10px;}
-    .connect img{width:60px;height:60px;transition:.2s;}
-    .connect img:hover{transform:scale(1.1);}
+h1 {
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
 
-    footer{text-align:center;padding:26px;color:var(--muted);font-size:14px;}
+h2 {
+  position: relative;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-bottom: 30px;
+  font-weight: 750;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin-top: 12px;
+  border-radius: 20px;
+  background: var(--accent);
+}
+
+p {
+  color: var(--muted);
+  max-width: 750px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+nav {
+  position: sticky;
+  top: 18px;
+  z-index: 1000;
+
+  width: min(1100px, calc(100% - 32px));
+  min-height: 64px;
+
+  margin: 18px auto 0;
+  padding: 10px 16px 10px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    background 0.3s ease,
+    border 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+nav strong {
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  min-width: 0;
+}
+
+nav a {
+  position: relative;
+
+  margin: 0 5px;
+  padding: 7px 8px;
+
+  color: var(--muted);
+  text-decoration: none;
+
+  font-size: 0.88rem;
+  font-weight: 600;
+
+  border-radius: 9px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.toggle {
+  width: 36px;
+  height: 36px;
+
+  margin-left: 7px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+  user-select: none;
+
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.toggle:hover {
+  transform: rotate(12deg);
+  background: var(--accent);
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+section {
+  width: min(1100px, calc(100% - 32px));
+
+  padding: 90px 0;
+  margin: auto;
+}
+
+section:first-of-type {
+  padding-top: 105px;
+}
+
+
+/* =========================================================
+   UNIVERSAL CARD
+   ========================================================= */
+
+.card {
+  position: relative;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  padding: 28px;
+
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+#about .card {
+  max-width: 950px;
+}
+
+#about ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  gap: 14px;
+}
+
+#about li {
+  position: relative;
+
+  margin: 0;
+  padding-left: 28px;
+
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+#about li::before {
+  content: "✓";
+
+  position: absolute;
+  left: 0;
+  top: 1px;
+
+  width: 19px;
+  height: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--accent);
+  background: var(--accent-soft);
+
+  border-radius: 50%;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+
+  padding: 9px 17px;
+
+  border-radius: 10px;
+
+  background: var(--accent);
+  color: #ffffff !important;
+
+  border: 1px solid transparent;
+
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 650;
+
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  padding: 24px;
+}
+
+.skill {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 38px;
+
+  padding: 7px 13px;
+
+  border-radius: 10px;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+
+  color: var(--muted);
+
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.skill:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: rgba(37, 99, 235, 0.22);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PROJECTS GRID
+   ========================================================= */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+.project {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100%;
+}
+
+.project img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+
+  margin-bottom: 20px;
+
+  background: var(--bg);
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.project:hover img {
+  filter: brightness(1.04);
+}
+
+.project strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 1.08rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.project p {
+  font-size: 0.91rem;
+  line-height: 1.65;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+
+/* =========================================================
+   CERTIFICATIONS GRID
+   ========================================================= */
+
+.certificate-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   CERTIFICATE CARDS
+   ========================================================= */
+
+.certificate {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100%;
+}
+
+.certificate img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+
+  margin-bottom: 20px;
+
+  background: var(--bg);
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.certificate:hover img {
+  filter: brightness(1.04);
+}
+
+.certificate strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.certificate p {
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.certificate-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+
+/* =========================================================
+   CONNECT
+   ========================================================= */
+
+.connect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+  gap: 14px;
+
+  padding: 30px;
+}
+
+.connect a {
+  margin: 0 !important;
+
+  width: 66px;
+  height: 66px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.connect a:hover {
+  transform: translateY(-5px);
+  background: var(--accent-soft);
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.10);
+}
+
+.connect img {
+  width: 34px;
+  height: 34px;
+
+  object-fit: contain;
+
+  transition: transform 0.25s ease;
+}
+
+.connect a:hover img {
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  width: min(1100px, calc(100% - 32px));
+
+  margin: 0 auto;
+  padding: 30px 0 45px;
+
+  text-align: center;
+
+  color: var(--muted);
+  font-size: 0.82rem;
+
+  border-top: 1px solid var(--border);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  nav {
+    width: calc(100% - 24px);
+  }
+
+  nav a {
+    margin: 0 2px;
+    padding: 7px 6px;
+    font-size: 0.8rem;
+  }
+
+  section {
+    padding: 75px 0;
+  }
+
+  .certificate-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  nav {
+    top: 10px;
+
+    width: calc(100% - 20px);
+
+    padding: 9px 12px;
+
+    border-radius: 15px;
+
+    gap: 10px;
+  }
+
+  nav strong {
+    font-size: 0.9rem;
+  }
+
+  nav > div {
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    padding-bottom: 1px;
+  }
+
+  nav > div::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav a {
+    flex: 0 0 auto;
+
+    margin: 0;
+    padding: 6px 7px;
+
+    font-size: 0.73rem;
+  }
+
+  .toggle {
+    flex: 0 0 34px;
+
+    width: 34px;
+    height: 34px;
+
+    margin-left: 3px;
+  }
+
+  section {
+    width: calc(100% - 28px);
+
+    padding: 65px 0;
+  }
+
+  section:first-of-type {
+    padding-top: 85px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 1.65rem;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 17px;
+  }
+
+  .projects-grid,
+  .certificate-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .certificate img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .skills {
+    gap: 8px;
+  }
+
+  .skill {
+    font-size: 0.78rem;
+    padding: 7px 10px;
+  }
+
+  .connect {
+    gap: 10px;
+    padding: 22px;
+  }
+
+  .connect a {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+  }
+
+  .connect img {
+    width: 30px;
+    height: 30px;
+  }
+
+  footer {
+    width: calc(100% - 28px);
+    padding-bottom: 30px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  nav {
+    align-items: center;
+  }
+
+  nav strong {
+    font-size: 0.82rem;
+  }
+
+  nav a {
+    font-size: 0.68rem;
+    padding: 5px 6px;
+  }
+
+  section {
+    width: calc(100% - 22px);
+  }
+
+  .card {
+    padding: 17px;
+  }
+
+  #about li {
+    padding-left: 25px;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .project-footer,
+  .certificate-footer {
+    display: block;
+  }
+
+  .project-footer .btn,
+  .certificate-footer .btn {
+    margin-top: 4px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
   </style>
 </head>
 
@@ -263,7 +997,7 @@
   <div class="certificate-grid">
 
     <div class="card certificate">
-      <img src="anshjw1926@gmail.com_certificate.pdf" alt="Quantum"/>
+      <img src="Screenshot 2026-08-11 230824.png" alt="Quantum"/>
       <strong>Quantum computing</strong>
       <p>Quantum Computing by Centre for Development of Advanced Computing, Hyderabad & Indian Institute of Technology, Roorkee</p>
       <div class="certificate-footer">
