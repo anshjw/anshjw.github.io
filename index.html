@@ -91,6 +91,43 @@
       color:#fff;text-decoration:none;font-size:14px;
     }
 
+    .btn:hover {
+      background: var(--accent-hover, #0056b3); /* Replaces background color (adjust hex code as needed) */
+      opacity: 0.9; /* Slightly fades the button for a quick effect */
+      cursor: pointer; /* Ensures the pointer cursor appears */
+    }
+
+    /* CERTIFICATE GRID */
+    .certificate-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+    }
+    .certificate img{
+      width:100%;
+      border-radius:12px;
+      border:1px solid var(--border);
+      margin-bottom:12px;
+    }
+    .certificate-footer{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-top:10px;
+    }
+
+    .btn{
+      padding:8px 14px;
+      border-radius:8px;
+      background:var(--accent);
+      color:#fff;text-decoration:none;font-size:14px;
+    }
+
+    .btn:hover {
+      background: var(--accent-hover, #0056b3); /* Replaces background color (adjust hex code as needed) */
+      opacity: 0.9; /* Slightly fades the button for a quick effect */
+      cursor: pointer; /* Ensures the pointer cursor appears */
+    }
+
+    
     /* CONNECT */
     .connect{text-align:center;}
     .connect a{margin:0 10px;}
@@ -144,7 +181,9 @@
     <span class="skill">Power Pivot</span>
     <span class="skill">Pivot Table</span>
     <span class="skill">MY-SQL</span>
+    <span class="skill">No-SQL</span>
     <span class="skill">POSTGRE-SQL</span>
+    <span class="skill">D-beaver</span>
     <span class="skill">Python</span>
     <span class="skill">M-Language</span>
     <span class="skill">AWS</span>
@@ -153,15 +192,15 @@
     <span class="skill">DAA</span>
     <span class="skill">C++</span>
     <span class="skill">C</span>
-    <span class="skill">R</span>
     <span class="skill">Communication</span>
     <span class="skill">Video Editing</span>
     <span class="skill">Leadership</span>
     <span class="skill">Time Management</span>
-    <span class="skill">Network Security</span>
-    <span class="skill">Statistics</span>
     <span class="skill">Calculas</span>
+    <span class="skill">Statistics</span>
+    <span class="skill">Networking Security Basics</span>
     <span class="skill">Probability</span>
+    <span class="skill">R</span>
     <span class="skill">Quantum Computing</span>
   </div>
 </section>
@@ -220,7 +259,44 @@
 </section>
 
 <section id="certificate">
-  <h1>Technical Certifications</h1>
+  <h2>Technical Certifications</h2>
+  <div class="certificate-grid">
+
+    <div class="card certificate">
+      <img src="microproject.png" alt="Microproject"/>
+      <strong>C-DAC</strong>
+      <p>Quantum Computing by Centre for Development of Advanced Computing, Hyderabad & Indian Institute of Technology, Roorkee</p>
+      <div class="certificate-footer">
+        <span>
+        <a class="btn" href="CDACH/QML/510" target="_blank">Credentials</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="card certificate">
+      <img src="microproject.png" alt="Microproject"/>
+      <strong>Financial Fundamentals</strong>
+      <p>Finance fundamentals by Be10X</p>
+      <div class="certificate-footer">
+        <span>
+        <a class="btn" href="https://www.linkedin.com/safety/go/?url=https%3A%2F%2Fcertx%2Ein%2Fcertificate%2F9318e7f9-0234-4ea4-9390-efad88624b8b251741&urlhash=k3xW&mt=5739bVNgnXFXert2UAbRzj6f5fF-KwkPLBIDvZOWOeOsbe5y-g5vgfg24y05XinbgjaathraaYp4eTin_LlEhuKCApCx&isSdui=true" target="_blank">Credentials</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="card certificate">
+      <img src="microproject.png" alt="Microproject"/>
+      <strong>Cybersecurity Basics</strong>
+      <p>Introduction to cyber security by CISCO Netcad.</p>
+      <div class="certificate-footer">
+        <span>
+        <a class="btn" href="https://www.linkedin.com/safety/go/?url=https%3A%2F%2Fwww%2Ecredly%2Ecom%2Fbadges%2Ffd0b33a3-641d-44ee-83cc-7164ad482411&urlhash=zds6&mt=PClFYWqcGqEE_lvm3uqrLmC6J29z4c6Uk-przWtWBFs4Ky2MVRsoAxJgMjMFbTd92CVV0viICFZIlUzTJAJcaUhiHdzv&isSdui=true" target="_blank">Credentials</a>
+        </span>
+      </div>
+    </div>
+
+  </div>
+  
 </section>
   
 
